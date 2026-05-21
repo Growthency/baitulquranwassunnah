@@ -34,7 +34,7 @@ export const site = {
   ],
 
   social: {
-    facebook: "https://www.facebook.com/",
+    facebook: "https://www.facebook.com/baitul.quran.was",
     youtube: "https://www.youtube.com/",
   },
 } as const;
