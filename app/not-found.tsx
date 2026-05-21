@@ -19,7 +19,7 @@ export default function NotFound() {
               className="size-full object-cover"
             />
           </span>
-          <p className="text-shimmer mt-8 font-display text-7xl font-bold">৪০৪</p>
+          <p className="text-shimmer mt-8 font-display text-7xl font-bold">404</p>
           <h1 className="mt-4 font-display text-2xl font-semibold text-brand-900 sm:text-3xl">
             পৃষ্ঠাটি খুঁজে পাওয়া যায়নি
           </h1>

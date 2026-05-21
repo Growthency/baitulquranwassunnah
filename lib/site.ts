@@ -10,26 +10,26 @@ export const site = {
   tagline: "কুরআন ও সুন্নাহর আলোকে আদর্শ প্রজন্ম",
   description:
     "যাত্রাবাড়ী, ঢাকায় অবস্থিত একটি আধুনিক দ্বীনি শিক্ষা প্রতিষ্ঠান — যেখানে নাজেরা, হিফজুল কুরআন, নূরানী ও কিতাব বিভাগের পাশাপাশি সাধারণ শিক্ষার সমন্বয়ে গড়ে ওঠে আদর্শ, আত্মনির্ভর ও চরিত্রবান প্রজন্ম।",
-  established: "২০২১",
+  established: "2021",
   establishedEn: 2021,
   url: "https://baitulquranwassunnahmadrasa.com",
 
   // ── যোগাযোগ (এই তথ্যগুলো প্রয়োজনে আপডেট করুন) ─────────────────────
-  phone: "+৮৮০ ১৬০১-৪০০৫২২",
+  phone: "+880 1601-400522",
   phoneRaw: "+8801601400522",
   whatsapp: "8801601400522",
   whatsappMessage:
     "আসসালামু আলাইকুম, আমি বাইতুল কুরআন ওয়াস সুন্নাহ মাদরাসা সম্পর্কে জানতে চাই।",
   email: "info@baitulquranwassunnah.com",
   admissionEmail: "admission@baitulquranwassunnah.com",
-  address: "বিজিবি মার্কেট জামে মসজিদ, যাত্রাবাড়ী, ঢাকা–১২০৪",
+  address: "বিজিবি মার্কেট জামে মসজিদ, যাত্রাবাড়ী, ঢাকা–1204",
   addressShort: "যাত্রাবাড়ী, ঢাকা",
   mapEmbed:
     "https://maps.google.com/maps?q=Jatrabari%2C%20Dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed",
   mapLink: "https://www.google.com/maps/search/?api=1&query=Jatrabari+Dhaka",
 
   hours: [
-    { day: "শনি – বৃহস্পতি", time: "সকাল ৮:০০ – বিকাল ৫:০০" },
+    { day: "শনি – বৃহস্পতি", time: "সকাল 8:00 – বিকাল 5:00" },
     { day: "শুক্রবার", time: "অফিস বন্ধ (আবাসিক চালু)" },
   ],
 

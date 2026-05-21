@@ -154,7 +154,7 @@ export function AdmissionForm() {
           <input
             id="a-age"
             className={field}
-            placeholder="যেমন: ৭ বছর"
+            placeholder="যেমন: 7 বছর"
             value={form.age}
             onChange={update("age")}
           />

@@ -166,7 +166,7 @@ export function Hero() {
                 <GraduationCap className="size-5" />
               </span>
               <div className="leading-tight">
-                <p className="font-display text-lg font-bold text-brand-900">৪০+</p>
+                <p className="font-display text-lg font-bold text-brand-900">40+</p>
                 <p className="text-xs text-ink-muted">কৃতী হাফেজ</p>
               </div>
             </div>
@@ -181,7 +181,7 @@ export function Hero() {
                 <BookOpen className="size-5" />
               </span>
               <div className="leading-tight">
-                <p className="font-display text-lg font-bold text-brand-900">৬টি</p>
+                <p className="font-display text-lg font-bold text-brand-900">6টি</p>
                 <p className="text-xs text-ink-muted">শিক্ষা বিভাগ</p>
               </div>
             </div>

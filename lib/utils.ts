@@ -5,10 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/** Convert western digits to Bengali numerals (for dates, counts, etc.). */
-const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+/** Display numbers using Western digits (0-9) for readability. */
 export function toBn(value: number | string): string {
-  return String(value).replace(/[0-9]/g, (d) => bnDigits[Number(d)]);
+  return String(value);
 }
 
 export function formatBnDate(iso: string): string {
@@ -27,5 +26,5 @@ export function formatBnDate(iso: string): string {
     "ডিসেম্বর",
   ];
   const d = new Date(iso);
-  return `${toBn(d.getDate())} ${months[d.getMonth()]}, ${toBn(d.getFullYear())}`;
+  return `${d.getDate()} ${months[d.getMonth()]}, ${d.getFullYear()}`;
 }
