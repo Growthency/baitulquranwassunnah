@@ -15,11 +15,11 @@ export const site = {
   url: "https://baitulquranwassunnah.com",
 
   // ── যোগাযোগ (এই তথ্যগুলো প্রয়োজনে আপডেট করুন) ─────────────────────
-  phone: "+৮৮০ ১৮১০-৩৪৫৬৭৮",
-  phoneRaw: "+8801810345678",
-  phone2: "+৮৮০ ১৭১৭-৯৮৭৬৫৪",
-  phone2Raw: "+8801717987654",
-  whatsapp: "8801810345678",
+  phone: "+৮৮০ ১৬০১-৪০০৫২২",
+  phoneRaw: "+8801601400522",
+  whatsapp: "8801601400522",
+  whatsappMessage:
+    "আসসালামু আলাইকুম, আমি বাইতুল কুরআন ওয়াস সুন্নাহ মাদরাসা সম্পর্কে জানতে চাই।",
   email: "info@baitulquranwassunnah.com",
   admissionEmail: "admission@baitulquranwassunnah.com",
   address: "বিজিবি মার্কেট জামে মসজিদ, যাত্রাবাড়ী, ঢাকা–১২০৪",

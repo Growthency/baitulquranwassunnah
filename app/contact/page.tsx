@@ -25,7 +25,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       label: "মোবাইল",
-      value: `${site.phone}, ${site.phone2}`,
+      value: site.phone,
       href: `tel:${site.phoneRaw}`,
     },
     {

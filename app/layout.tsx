@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Anek_Bangla, Hind_Siliguri, Amiri } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SiteBackground } from "@/components/SiteBackground";
+import { FloatingButtons } from "@/components/FloatingButtons";
+import { PWA } from "@/components/PWA";
 import { site } from "@/lib/site";
 
 const anek = Anek_Bangla({
@@ -59,9 +61,25 @@ export const metadata: Metadata = {
     description: site.description,
   },
   icons: {
-    icon: "/logo.webp",
-    apple: "/logo.webp",
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: site.name,
+  },
+  applicationName: site.name,
+};
+
+export const viewport: Viewport = {
+  themeColor: "#134634",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -79,6 +97,8 @@ export default function RootLayout({
         <Navbar />
         <main className="relative z-10">{children}</main>
         <Footer />
+        <FloatingButtons />
+        <PWA />
       </body>
     </html>
   );

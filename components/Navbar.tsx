@@ -80,9 +80,9 @@ export function Navbar() {
       {/* Main bar */}
       <div
         className={cn(
-          "transition-all duration-500",
+          "border-0 transition-all duration-500",
           scrolled
-            ? "glass shadow-lg shadow-brand-950/5"
+            ? "bg-cream-50/80 shadow-[0_8px_30px_-12px_rgba(6,22,16,0.18)] backdrop-blur-xl backdrop-saturate-150"
             : "bg-transparent",
         )}
       >
