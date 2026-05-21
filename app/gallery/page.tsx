@@ -8,6 +8,7 @@ import { gallery } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "গ্যালারি",
+  alternates: { canonical: "/gallery" },
   description:
     "বাইতুল কুরআন ওয়াস সুন্নাহ মাদরাসার শিক্ষা কার্যক্রম, প্রাঙ্গণ ও নানা মুহূর্তের ছবি।",
 };

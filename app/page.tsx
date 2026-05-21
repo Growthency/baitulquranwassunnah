@@ -49,7 +49,7 @@ export default async function HomePage() {
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-4 max-w-[14rem] rounded-2xl bg-white/90 p-5 shadow-xl shadow-brand-950/10 ring-1 ring-brand-100 backdrop-blur sm:-right-6">
-                  <p className="font-arabic text-xl text-gold-600" dir="rtl">
+                  <p className="font-arabic text-xl text-gold-700" dir="rtl">
                     إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ
                   </p>
                   <p className="mt-1 text-xs text-ink-soft">
@@ -76,7 +76,7 @@ export default async function HomePage() {
                       <div>
                         <p className="font-display font-semibold text-brand-900">
                           {v.title}{" "}
-                          <span className="font-arabic text-sm text-gold-600">
+                          <span className="font-arabic text-sm text-gold-700">
                             {v.arabic}
                           </span>
                         </p>

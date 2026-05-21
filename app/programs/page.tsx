@@ -10,6 +10,7 @@ import { programs } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "বিভাগসমূহ",
+  alternates: { canonical: "/programs" },
   description:
     "নূরানী, নাজেরা, হিফজুল কুরআন ও কিতাব বিভাগসহ আমাদের সকল শিক্ষা বিভাগের বিস্তারিত তথ্য।",
 };

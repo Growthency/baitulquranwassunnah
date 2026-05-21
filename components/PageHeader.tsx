@@ -3,6 +3,8 @@ import { ChevronLeft } from "lucide-react";
 import { Container } from "./ui/Container";
 import { Reveal } from "./Reveal";
 import { Eyebrow } from "./ui/SectionHeading";
+import { JsonLd } from "./JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 type Crumb = { label: string; href?: string };
 
@@ -19,8 +21,14 @@ export function PageHeader({
   description?: string;
   breadcrumb?: Crumb[];
 }) {
+  const crumbItems = [
+    { name: "হোম", path: "/" },
+    ...breadcrumb.map((c) => ({ name: c.label, path: c.href })),
+  ];
+
   return (
     <section className="relative overflow-hidden pb-12 pt-36 sm:pt-40">
+      <JsonLd data={breadcrumbSchema(crumbItems)} />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-full pattern-arabesque opacity-40" />
       <Container className="relative">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">

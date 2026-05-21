@@ -11,6 +11,7 @@ import { facilities } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "সুযোগ-সুবিধা",
+  alternates: { canonical: "/facilities" },
   description:
     "আবাসন, পুষ্টিকর খাবার, পাঠাগার, নিরাপত্তা ও সুসজ্জিত পরিবেশসহ আমাদের সকল সুযোগ-সুবিধা সম্পর্কে জানুন।",
 };

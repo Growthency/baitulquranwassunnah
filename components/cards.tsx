@@ -34,7 +34,7 @@ export function ProgramCard({ program }: { program: Program }) {
         <h3 className="font-display text-xl font-semibold text-brand-900">
           {program.name}
         </h3>
-        <p className="mt-1 text-sm font-medium text-gold-600">{program.tagline}</p>
+        <p className="mt-1 text-sm font-medium text-gold-700">{program.tagline}</p>
         <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-ink-soft">
           {program.description}
         </p>
@@ -42,7 +42,7 @@ export function ProgramCard({ program }: { program: Program }) {
           <span className="inline-flex items-center gap-1.5">
             <span className="size-1.5 rounded-full bg-gold-400" /> বয়স {program.age}
           </span>
-          <span className="inline-flex items-center gap-1 font-medium text-brand-700 transition-colors group-hover:text-gold-600">
+          <span className="inline-flex items-center gap-1 font-medium text-brand-700 transition-colors group-hover:text-gold-700">
             বিস্তারিত
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
@@ -81,7 +81,7 @@ export function TeacherCard({ teacher }: { teacher: Teacher }) {
       <h3 className="mt-5 font-display text-lg font-semibold text-brand-900">
         {teacher.name}
       </h3>
-      <p className="mt-1 text-sm font-medium text-gold-600">{teacher.role}</p>
+      <p className="mt-1 text-sm font-medium text-gold-700">{teacher.role}</p>
       <p className="mt-2 inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs text-brand-700 ring-1 ring-brand-100">
         {teacher.specialty}
       </p>

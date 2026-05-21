@@ -9,6 +9,8 @@ import { BlogCard } from "@/components/BlogCard";
 import { CTASection } from "@/components/sections";
 import { getAllPosts, getAllSlugs, getPostBySlug, type BlogBlock } from "@/lib/blog";
 import { formatBnDate, toBn } from "@/lib/utils";
+import { JsonLd } from "@/components/JsonLd";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -25,7 +27,21 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
-    openGraph: { title: post.title, description: post.excerpt, images: [post.cover] },
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      authors: [post.author],
+      images: [post.cover],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.cover],
+    },
   };
 }
 
@@ -83,6 +99,14 @@ export default async function BlogPostPage({
 
   return (
     <article>
+      <JsonLd data={blogPostingSchema(post)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "হোম", path: "/" },
+          { name: "ব্লগ", path: "/blog" },
+          { name: post.title },
+        ])}
+      />
       {/* Cover hero */}
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
         <Image
@@ -124,7 +148,7 @@ export default async function BlogPostPage({
           <div className="mx-auto max-w-3xl">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 transition-colors hover:text-gold-600"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 transition-colors hover:text-gold-700"
             >
               <ChevronLeft className="size-4" /> সব লেখায় ফিরে যান
             </Link>
@@ -138,7 +162,7 @@ export default async function BlogPostPage({
             </div>
 
             <div className="mt-10 rounded-3xl bg-brand-50/60 p-6 text-center ring-1 ring-brand-100">
-              <p className="font-arabic text-2xl text-gold-600" dir="rtl">
+              <p className="font-arabic text-2xl text-gold-700" dir="rtl">
                 وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ
               </p>
               <p className="mt-2 text-sm text-ink-soft">
@@ -159,7 +183,7 @@ export default async function BlogPostPage({
               </h2>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:text-gold-600"
+                className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:text-gold-700"
               >
                 সব লেখা <ArrowRight className="size-4" />
               </Link>

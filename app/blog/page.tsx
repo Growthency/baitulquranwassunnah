@@ -8,6 +8,7 @@ import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "ব্লগ",
+  alternates: { canonical: "/blog" },
   description:
     "কুরআন শিক্ষা, হিফজ, নূরানী পদ্ধতি ও সন্তান গঠন নিয়ে উপকারী লেখা ও প্রবন্ধ।",
 };

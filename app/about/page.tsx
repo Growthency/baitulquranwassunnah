@@ -13,6 +13,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "পরিচিতি",
+  alternates: { canonical: "/about" },
   description:
     "বাইতুল কুরআন ওয়াস সুন্নাহ মাদরাসার লক্ষ্য, উদ্দেশ্য, পথচলা ও শিক্ষকমণ্ডলী সম্পর্কে বিস্তারিত জানুন।",
 };
@@ -127,7 +128,7 @@ export default function AboutPage() {
                   <span className="mx-auto inline-flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 text-cream-50 shadow-lg">
                     <Icon name={v.icon} className="size-6" />
                   </span>
-                  <p className="mt-4 font-arabic text-2xl text-gold-600" dir="rtl">
+                  <p className="mt-4 font-arabic text-2xl text-gold-700" dir="rtl">
                     {v.arabic}
                   </p>
                   <h3 className="mt-1 font-display text-lg font-semibold text-brand-900">

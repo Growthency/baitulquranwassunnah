@@ -8,9 +8,12 @@ import { Accordion } from "@/components/Accordion";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { faqs } from "@/lib/content";
 import { site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "ভর্তি",
+  alternates: { canonical: "/admissions" },
   description:
     "বাইতুল কুরআন ওয়াস সুন্নাহ মাদরাসায় ভর্তির নিয়মাবলি, প্রয়োজনীয় কাগজপত্র ও অনলাইন আবেদন ফরম।",
 };
@@ -48,6 +51,7 @@ const requirements = [
 export default function AdmissionsPage() {
   return (
     <>
+      <JsonLd data={faqSchema(faqs)} />
       <PageHeader
         arabic="هَلُمَّ إِلَى الْعِلْم"
         eyebrow="ভর্তি কার্যক্রম"

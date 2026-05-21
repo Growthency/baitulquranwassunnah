@@ -10,6 +10,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "যোগাযোগ",
+  alternates: { canonical: "/contact" },
   description:
     "বাইতুল কুরআন ওয়াস সুন্নাহ মাদরাসার ঠিকানা, ফোন, ইমেইল ও যোগাযোগ ফরম। যেকোনো জিজ্ঞাসায় আমাদের সাথে যোগাযোগ করুন।",
 };
