@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   Baitul Quran Was Sunnah — Design System
+   Palette derived from the institution crest:
+   forest green · gold · burgundy · cream · teal
+---------------------------------------------------------------------------- */
+
+@theme {
+  /* Cream / surface */
+  --color-cream-50: #fcfaf2;
+  --color-cream-100: #f7f1e1;
+  --color-cream-200: #efe5cc;
+  --color-cream-300: #e3d4af;
+  --color-cream-400: #d3bd86;
+
+  /* Brand green */
+  --color-brand-50: #ecf4ef;
+  --color-brand-100: #d1e7dc;
+  --color-brand-200: #a8cfbb;
+  --color-brand-300: #74b093;
+  --color-brand-400: #449072;
+  --color-brand-500: #267355;
+  --color-brand-600: #1a5b43;
+  --color-brand-700: #134634;
+  --color-brand-800: #0e3527;
+  --color-brand-900: #0a271e;
+  --color-brand-950: #061610;
+
+  /* Gold */
+  --color-gold-50: #fbf4e2;
+  --color-gold-100: #f5e6be;
+  --color-gold-200: #edd491;
+  --color-gold-300: #e3be5e;
+  --color-gold-400: #d6a63a;
+  --color-gold-500: #c18f28;
+  --color-gold-600: #9e7119;
+  --color-gold-700: #7c5713;
+
+  /* Burgundy / maroon */
+  --color-maroon-50: #f7e9ea;
+  --color-maroon-100: #e9c4c8;
+  --color-maroon-200: #d5939b;
+  --color-maroon-300: #b95766;
+  --color-maroon-400: #9c3343;
+  --color-maroon-500: #7e2531;
+  --color-maroon-600: #661c26;
+  --color-maroon-700: #4e141c;
+
+  /* Teal accent */
+  --color-teal-200: #bfe0da;
+  --color-teal-300: #9fd0c9;
+  --color-teal-400: #74b7ad;
+
+  /* Ink / text */
+  --color-ink: #1b1714;
+  --color-ink-soft: #4a4138;
+  --color-ink-muted: #756b5e;
+
+  /* Fonts (wired from next/font in layout) */
+  --font-display: var(--font-anek), system-ui, sans-serif;
+  --font-body: var(--font-hind), system-ui, sans-serif;
+  --font-arabic: var(--font-amiri), serif;
+
+  /* Radius */
+  --radius-xl2: 1.75rem;
+  --radius-xl3: 2.5rem;
+}
+
+/* ------------------------------- Base ------------------------------------- */
+:root {
+  --page: #fcfaf2;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  background-color: var(--page);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-body);
+  font-feature-settings: "liga", "kern";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-brand-900);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-300);
+  border-radius: 9999px;
+  border: 3px solid var(--color-cream-100);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-500);
+}
+
+/* ----------------------------- Utilities ---------------------------------- */
+
+/* Subtle film grain that lifts flat gradients into something premium */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Animated gradient text (the shimmer headline) */
+.text-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--color-brand-700) 0%,
+    var(--color-brand-500) 28%,
+    var(--color-gold-400) 50%,
+    var(--color-brand-500) 72%,
+    var(--color-brand-700) 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.text-gold-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--color-gold-600) 0%,
+    var(--color-gold-300) 45%,
+    #fff7e0 50%,
+    var(--color-gold-300) 55%,
+    var(--color-gold-600) 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Glass surface */
+.glass {
+  background: rgba(252, 250, 242, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-dark {
+  background: rgba(10, 39, 30, 0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* The morphing parallax blob */
+.blob {
+  position: absolute;
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  filter: blur(46px);
+  will-change: transform, border-radius;
+  animation: blobMorph 18s ease-in-out infinite;
+}
+
+/* Animated mesh / aurora background */
+.aurora {
+  background:
+    radial-gradient(40% 55% at 18% 22%, rgba(38, 115, 85, 0.22) 0%, transparent 60%),
+    radial-gradient(38% 50% at 82% 18%, rgba(214, 166, 58, 0.20) 0%, transparent 60%),
+    radial-gradient(50% 60% at 70% 88%, rgba(126, 37, 49, 0.16) 0%, transparent 62%),
+    radial-gradient(45% 55% at 25% 85%, rgba(116, 183, 173, 0.18) 0%, transparent 60%);
+  background-size: 200% 200%;
+  animation: gradientPan 22s ease-in-out infinite;
+}
+
+/* Hairline gold rule */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-400),
+    transparent
+  );
+}
+
+/* Animated underline for links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background: var(--color-gold-400);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Pattern: faint Islamic geometric grid */
+.pattern-arabesque {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23134634' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3Ccircle cx='30' cy='30' r='14'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Caret for typewriter */
+.caret {
+  display: inline-block;
+  width: 0.06em;
+  margin-left: 0.06em;
+  background: currentColor;
+  animation: caretBlink 1s steps(1) infinite;
+}
+
+/* Marquee track */
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ------------------------------ Keyframes --------------------------------- */
+@keyframes shimmer {
+  to {
+    background-position: -220% center;
+  }
+}
+
+@keyframes gradientPan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes blobMorph {
+  0%,
+  100% {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    border-radius: 63% 37% 41% 59% / 57% 63% 37% 43%;
+    transform: translate3d(2%, -3%, 0) scale(1.06);
+  }
+  66% {
+    border-radius: 38% 62% 56% 44% / 49% 38% 62% 51%;
+    transform: translate3d(-2%, 2%, 0) scale(0.97);
+  }
+}
+
+@keyframes caretBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.animate-float {
+  animation: floatY 7s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: floatY 11s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
